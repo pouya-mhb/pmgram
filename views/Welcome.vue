@@ -1,15 +1,5 @@
 <template>
     <div>
-        <span>Welcome to PMgram</span>
+        <h1>Welcome to PMgram</h1>
     </div>
 </template>
-
-<script>
-export default {
-    
-}
-</script>
-
-<style>
-
-</style>
