@@ -1,0 +1,39 @@
+$primary: #344955;
+$secondary: #F9AA33;
+$third: #232F34;
+$font-color: #e2eff8; 
+$icon-color: #a7b8c0;
+
+// primary
+.bc-primary{
+    background-color: $primary !important;
+}
+.c-primary{
+    color: $primary !important;
+}
+
+// secondary
+.bc-secondary{
+    background-color: $secondary !important;
+}
+.c-secondary{
+    color: $secondary !important;
+}
+
+// third
+.bc-third{
+    background-color: $third !important;
+}
+.c-third{
+    color: $third !important;
+}
+
+// font color
+.font-color{
+    color: $font-color !important;
+}
+
+// icon color
+.icon-color{
+    color: $icon-color !important;
+}

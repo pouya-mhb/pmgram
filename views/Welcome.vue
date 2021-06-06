@@ -1,8 +1,16 @@
 <template>
-  <div>
-    <h1>Welcome to PMgram</h1>
+  <div class="welcome">
+    <div class="logo" style="position: relative;">
+      <v-icon class="p-icon">mdi-message-text</v-icon>
+      <v-icon medium class="m-icon">mdi-alpha-m</v-icon>
+    </div>
+    <div class="title">
+      <h2>PMgram</h2>
+      <p class="pt-1">Free, Fast And Secure</p>
+    </div>
     <br>
-    <v-btn @click="goToLoginPage()" color="primary" elevation="10">login</v-btn>
+    <br>
+    <v-btn class="btn bc-secondary c-primary" @click="goToRegisterPage()">start</v-btn>
   </div>
 </template>
 
@@ -16,8 +24,8 @@ export default {
     },
 
     methods:{
-        goToLoginPage(){
-            router.push("/login");
+        goToRegisterPage(){
+            router.push("/register");
         },
     },
 }

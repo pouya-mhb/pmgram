@@ -1,0 +1,48 @@
+.welcome {
+  margin: 0;
+  height: 100vh;
+  background-color: $primary;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: $secondary;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .p-icon {
+      font-size: 4.3rem;
+    }
+    .m-icon {
+      color: $secondary;
+      position: absolute;
+      top: 51px;
+      right: 25px;
+    }
+  }
+  .title {
+    color: $font-color;
+    text-align: center;
+    p {
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+    h2{
+      font-weight: 400;
+    }
+  }
+  .btn {
+    position: absolute;
+    bottom: 60px;
+    border-radius: 50px;
+    width: 200px;
+    font-weight: bold;
+  }
+}
