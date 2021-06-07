@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import router from './../router'
 export default {
     data() {
         return {
@@ -25,7 +24,9 @@ export default {
 
     methods:{
         goToRegisterPage(){
-            router.push("/register");
+           setTimeout(() => {
+             this.$router.push("/register");
+           }, 500);
         },
     },
 }
