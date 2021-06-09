@@ -1,15 +1,61 @@
 <template>
-    <div class="login">
-      <div class="container animate__animated animate__fadeIn">
-        <h1 class="font-color">Login</h1>
-        <h3 class="c-secondary">Coming soon!</h3>
-        <v-icon class="c-secondary">mdi-tools</v-icon>
-      </div>
+  <div class="login">
+    <v-card class="card animate__animated animate__fadeIn" flat tile>
+      <v-toolbar color="#232F34" dark>
+        <v-icon @click="goToSignUp()">mdi-arrow-left</v-icon>
+        <v-toolbar-title class="pl-8 pt-2">Login</v-toolbar-title>
+      </v-toolbar>
+    </v-card>
+    <br />
+    <br />
+    <div 
+    class="bc-primary animate__animated animate__fadeIn" 
+    style="width:80vw">
+      <v-text-field
+        ref="email"
+        v-model="login.email"
+        autocomplete="off"
+        label="Email"
+        color="#F9AA33"
+        required
+        dark
+      ></v-text-field>
+      <v-text-field
+        ref="password"
+        v-model="login.password"
+        autocomplete="off"
+        type="password"
+        label="Password"
+        color="#F9AA33"
+        required
+        dark
+      ></v-text-field>
     </div>
+    <br />
+    <br />
+    <v-btn 
+    class="btn bc-secondary c-primary pt-2 animate__animated animate__fadeIn"
+    @click="goToRegisterPage()"
+      >Login</v-btn
+    >
+    <br />
+    <p class="goToSignUp animate__animated animate__fadeIn">
+      <a>Forgot password?</a>
+    </p>
+  </div>
 </template>
 
 <script>
 export default {
-  
+  data(){
+    return{
+      login:{},
+    }
+  },
+  methods:{
+    goToSignUp(){
+      this.$router.push("/register");
+    },
+  }
 }
 </script>

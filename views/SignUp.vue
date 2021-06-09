@@ -8,14 +8,14 @@
     </v-card>
     <br />
     <br />
-    <v-card 
+    <div 
     class="bc-primary animate__animated animate__fadeIn" 
-    style="box-shadow: none !important; width:80vw">
+    style="width:80vw">
       <v-text-field
         ref="firstName"
-        v-model="firstName"
+        v-model="register.firstName"
         autocomplete="off"
-        :rules="[() => !!firstName || 'This field is required']"
+        :rules="[() => !!register.firstName || 'This field is required']"
         label="First Name"
         color="#F9AA33"
         required
@@ -23,9 +23,9 @@
       ></v-text-field>
       <v-text-field
         ref="lastName"
-        v-model="lastName"
+        v-model="register.lastName"
         autocomplete="off"
-        :rules="[() => !!lastName || 'This field is required']"
+        :rules="[() => !!register.lastName || 'This field is required']"
         label="Last Name"
         color="#F9AA33"
         required
@@ -33,9 +33,9 @@
       ></v-text-field>
       <v-text-field
         ref="userName"
-        v-model="userName"
+        v-model="register.userName"
         autocomplete="off"
-        :rules="[() => !!userName || 'This field is required']"
+        :rules="[() => !!register.userName || 'This field is required']"
         label="User Name"
         color="#F9AA33"
         required
@@ -43,9 +43,9 @@
       ></v-text-field>
       <v-text-field
         ref="email"
-        v-model="email"
+        v-model="register.email"
         autocomplete="off"
-        :rules="[() => !!email || 'This field is required']"
+        :rules="[() => !!register.email || 'This field is required']"
         label="Email"
         color="#F9AA33"
         required
@@ -53,10 +53,10 @@
       ></v-text-field>
       <v-text-field
         ref="password"
-        v-model="password"
+        v-model="register.password"
         autocomplete="off"
         type="password"
-        :rules="[() => !!password || 'This field is required']"
+        :rules="[() => !!register.password || 'This field is required']"
         label="Password"
         color="#F9AA33"
         required
@@ -64,19 +64,19 @@
       ></v-text-field>
       <v-text-field
         ref="confirmPassword"
-        v-model="confirmPassword"
+        v-model="register.confirmPassword"
         autocomplete="off"
         type="password"
-        :rules="[() => !!confirmPassword || 'This field is required']"
+        :rules="[() => !!register.confirmPassword || 'This field is required']"
         label="Confirm Password"
         color="#F9AA33"
         required
         dark
       ></v-text-field>
-    </v-card>
+    </div>
     <br />
     <v-btn 
-    class="btn bc-secondary c-primary pt-1 animate__animated animate__fadeIn"
+    class="btn bc-secondary c-primary pt-2 animate__animated animate__fadeIn"
     @click="goToRegisterPage()"
       >Submit</v-btn
     >
@@ -91,12 +91,7 @@
 export default {
   data() {
     return {
-      firstName: "",
-      lastName: "",
-      userName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+      register:{},
     };
   },
 
