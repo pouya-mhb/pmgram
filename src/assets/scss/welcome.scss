@@ -1,4 +1,5 @@
 .welcome {
+  font-family: 'Baloo Tammudu 2', cursive;
   margin: 0;
   height: 100vh;
   background-color: $primary;
@@ -31,11 +32,12 @@
     color: $font-color;
     text-align: center;
     p {
-      font-size: 15px;
+      font-size: 17px;
       letter-spacing: 2px;
     }
     h2{
       font-weight: 400;
+      font-size: 33px;
     }
   }
   .btn {

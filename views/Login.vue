@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <h1>
-        <span>Login</span>
-        <v-icon large color="#2c3e50">mdi-login</v-icon>
-    </h1>
-  </div>
+    <div class="login">
+      <div class="container animate__animated animate__fadeIn">
+        <h1 class="font-color">Login</h1>
+        <h3 class="c-secondary">Coming soon!</h3>
+        <v-icon class="c-secondary">mdi-tools</v-icon>
+      </div>
+    </div>
 </template>
 
 <script>
