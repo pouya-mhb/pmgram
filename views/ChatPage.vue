@@ -15,8 +15,11 @@
           src="./../src/assets/images/1.png"
           class="contact-img"
           v-show="!search"
+          @click="profile = true"
         ></v-img>
-        <h3 v-show="!search" class="contact-name">Name</h3>
+        <h3 v-show="!search" @click="profile = true" class="contact-name">
+          Name
+        </h3>
         <v-spacer></v-spacer>
         <v-icon
           v-show="!search"
@@ -53,7 +56,7 @@
         <v-col cols="10" class="py-0">
           <input
             v-model="message"
-            class="input grey--text"
+            class="input grey--text px-1"
             type="text"
             placeholder="Write a message..."
           />
@@ -63,6 +66,81 @@
         </v-col>
       </v-row>
     </div>
+
+    <v-dialog
+      v-model="profile"
+      fullscreen
+      hide-overlay
+      transition="dialog-bottom-transition"
+      scrollable
+    >
+      <v-card class="card" flat tile>
+        <v-toolbar style="box-shadow: none !important" color="#232F34" dark>
+          <v-icon v-show="!search" @click="profile = false" large
+            >mdi-chevron-down</v-icon
+          >
+          <v-spacer></v-spacer>
+          <v-icon
+            @click="newName == true ? newName = false : newName = true"
+            class="pr-1 pt-2"
+            >mdi-pencil</v-icon
+          >
+        </v-toolbar>
+        <div class="dialog-body">
+          <div class="header">
+            <v-row class="py-4" style="width: 100vw">
+              <v-col cols="4">
+                <v-img
+                  max-height="70"
+                  max-width="70"
+                  src="./../src/assets/images/1.png"
+                  class="profile-img float-right"
+                  v-show="!search"
+                  @click="profile = true"
+                ></v-img>
+              </v-col>
+              <v-col cols="8" class="pl-1 pt-5">
+                <span style="color: #F9AA33; font-size:12px;">Contact name</span>
+                <v-text-field
+                  placeholder="New name"
+                  color="#F9AA33"
+                  v-show="newName"
+                  class="pa-0"
+                  dark
+                  autofocus
+                  style="position: absolute; top:95px"
+                >
+                </v-text-field>
+                <h3 v-show="!newName" class="profile-name white--text">
+                  Name
+                </h3></v-col
+              >
+            </v-row>
+          </div>
+          <div class="body">
+            <span style="color: #F9AA33; font-size:12px">Full name</span>
+            <h3 class="profile-name white--text">
+              Name Family
+            </h3>
+            <br />
+            <span style="color: #F9AA33; font-size:12px">Username</span>
+            <h3 class="profile-name white--text">
+              @username
+            </h3>
+            <br />
+            <span style="color: #F9AA33; font-size:12px">Bio</span>
+            <h3 class="profile-name white--text">
+              This is my bio :)
+            </h3>
+            <br />
+            <span style="color: #F9AA33; font-size:12px">Email</span>
+            <h3 class="profile-name white--text">
+              name@gmail.com
+            </h3>
+          </div>
+        </div>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -78,6 +156,8 @@ export default {
       message: "",
       showOptions: false,
       search: false,
+      profile: false,
+      newName: false,
     };
   },
   directives: {
@@ -97,3 +177,43 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.v-icon.v-icon::after {
+  background-color: transparent !important;
+}
+.dialog-body {
+  height: 92vh;
+  background-color: #344955;
+
+  .header {
+    background-color: #232f34;
+    width: 100%;
+
+    .title{
+      color: #F9AA33; 
+      font-size:12px;
+    }
+    .profile-img {
+      border-radius: 50%;
+    }
+    .profile-name {
+      font-size: 21px;
+      font-weight: 400;
+    }
+  }
+
+  .body {
+    padding: 50px;
+
+    .title{
+      color: #F9AA33; 
+      font-size:12px;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 17px;
+    }
+  }
+}
+</style>
