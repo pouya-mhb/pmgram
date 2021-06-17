@@ -1,5 +1,5 @@
 .signUp{
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: 'Baloo Tammudu 2';
   margin: 0;
   height: 100vh;
   background-color: $primary;
@@ -16,7 +16,7 @@
     font-weight: bold;
   }
   .v-messages__message{
-    padding-top: 5px;
+    padding-top: 3px;
   }
   .goToLogin{
     a{

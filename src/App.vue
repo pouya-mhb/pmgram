@@ -21,10 +21,10 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Montserrat:wght@100&display=swap');
  /* color: #2c3e50; */
 body{
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: 'Baloo Tammudu 2';
 }
 h1, h2, h3, h4, h5, h6, p, span{
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: 'Baloo Tammudu 2';
 }
 .animate__animated.animate__fadeIn {
   --animate-duration: 0.7s;

@@ -1,5 +1,27 @@
 <template>
-    <div>
-        <h1>Search</h1>
-    </div>
+  <div class="searchPage">
+    <v-card class="card animate__animated animate__fadeIn" flat tile>
+      <v-toolbar color="#232F34" dark>
+        <v-icon @click="goToLogin()">mdi-arrow-left</v-icon>
+        <Search />
+      </v-toolbar>
+    </v-card>
+  </div>
 </template>
+
+<script>
+import Search from "./../src/components/SearchBar.vue";
+export default {
+  components: {
+    Search,
+  },
+  data() {
+    return {};
+  },
+  methods:{
+      goToLogin(){
+          this.$router.push("/login");
+      },
+  }
+};
+</script>

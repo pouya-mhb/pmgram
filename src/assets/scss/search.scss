@@ -1,5 +1,5 @@
-.login {
-  font-family: 'Baloo Tammudu 2';
+.searchPage {
+  font-family: "Baloo Tammudu 2";
   margin: 0;
   height: 100vh;
   background-color: $primary;
@@ -7,17 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .card{
     width: 100vw;
-  }
-  .btn {
-    border-radius: 50px;
-    width: 200px;
-    font-weight: bold;
-  }
-  .goToSignUp{
-    a{
-      color: $secondary;
-    }
   }
 }

@@ -35,12 +35,17 @@
     <br />
     <v-btn 
     class="btn bc-secondary c-primary pt-2 animate__animated animate__fadeIn"
-    @click="goToRegisterPage()"
       >Login</v-btn
     >
     <br />
     <p class="goToSignUp animate__animated animate__fadeIn">
       <a>Forgot password?</a>
+    </p>
+    <p @click="goToSearch()" class="goToSignUp animate__animated animate__fadeIn">
+      <a>Search Now!</a>
+    </p>
+    <p @click="goToChatPage()" class="goToSignUp animate__animated animate__fadeIn">
+      <a>Chat Page</a>
     </p>
   </div>
 </template>
@@ -56,6 +61,12 @@ export default {
     goToSignUp(){
       this.$router.push("/register");
     },
+    goToSearch(){
+      this.$router.push("/search");
+    },
+    goToChatPage(){
+      this.$router.push("/chatPage");
+    }
   }
 }
 </script>
