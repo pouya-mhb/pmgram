@@ -27,4 +27,9 @@ h1, h2, h3, h4, h5, h6, p, span{
 .animate__animated.animate__fadeIn {
   --animate-duration: 0.7s;
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 </style>

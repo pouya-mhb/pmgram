@@ -1,24 +1,16 @@
 <template>
   <div class="searchBar">
-    <input 
-      v-model="filter"
-      type="text"
-      autofocus
-      placeholder="Search..."
-      id="filterInput"
-      style="width: 280px; outline:none"
-      class="ml-5 grey--text" 
-      >
-      <!-- <v-text-field
+
+      <v-text-field
       v-model="filter"
       clearable
       autofocus
       id="filterInput"
       placeholder="Search..."
       style="width: 280px;"
-      color="#F9AA33"
-      class="ml-5 mt-7" 
-    ></v-text-field> -->
+      color="grey"
+      class="ml-5 mt-5" 
+    ></v-text-field> 
   </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="signUp">
-    <v-card class="card animate__animated animate__fadeIn" flat tile>
+    <v-card class="card" flat tile>
       <v-toolbar color="#232F34" dark>
         <v-icon @click="goToWelcome()">mdi-arrow-left</v-icon>
         <v-toolbar-title class="pl-8">Register</v-toolbar-title>

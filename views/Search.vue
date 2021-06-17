@@ -1,6 +1,6 @@
 <template>
   <div class="searchPage">
-    <v-card class="card animate__animated animate__fadeIn" flat tile>
+    <v-card class="card" flat tile>
       <v-toolbar color="#232F34" dark>
         <v-icon @click="goToLogin()">mdi-arrow-left</v-icon>
         <Search />
