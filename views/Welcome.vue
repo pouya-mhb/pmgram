@@ -13,7 +13,7 @@
     <br>
     <br>
     <v-btn 
-    class="btn bc-secondary c-primary pt-2 animate__animated animate__fadeIn" 
+    class="btn bc-secondary c-primary animate__animated animate__fadeIn" 
     @click="goToRegisterPage()">start</v-btn>
   </div>
 </template>

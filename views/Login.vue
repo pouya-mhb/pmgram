@@ -3,7 +3,7 @@
     <v-card class="card animate__animated animate__fadeIn" flat tile>
       <v-toolbar color="#232F34" dark>
         <v-icon @click="goToSignUp()">mdi-arrow-left</v-icon>
-        <v-toolbar-title class="pl-8 pt-2">Login</v-toolbar-title>
+        <v-toolbar-title class="pl-8">Login</v-toolbar-title>
       </v-toolbar>
     </v-card>
     <br />
@@ -34,7 +34,7 @@
     <br />
     <br />
     <v-btn 
-    class="btn bc-secondary c-primary pt-2 animate__animated animate__fadeIn"
+    class="btn bc-secondary c-primary animate__animated animate__fadeIn"
       >Login</v-btn
     >
     <br />

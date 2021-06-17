@@ -5,3 +5,16 @@
 @import "search.scss";
 @import "profile.scss";
 @import "chatPage.scss";
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.v-align{
+    vertical-align: middle;
+}
+.disabled {
+    pointer-events:none;
+    opacity:0.5;  
+}

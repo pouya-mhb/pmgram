@@ -1,5 +1,5 @@
 .signUp{
-  font-family: 'Baloo Tammudu 2';
+  font-family: 'Nunito';
   margin: 0;
   height: 100vh;
   background-color: $primary;
@@ -21,6 +21,8 @@
   .goToLogin{
     a{
       color: $secondary;
+      text-decoration: underline;
+      font-size: 15px;
     }
   }
 }
