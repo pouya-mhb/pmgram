@@ -2,7 +2,7 @@
   <div class="searchPage">
     <v-card class="card" flat tile>
       <v-toolbar color="#232F34" dark>
-        <v-icon @click="goToLogin()">mdi-arrow-left</v-icon>
+        <v-icon @click="goToHome()">mdi-arrow-left</v-icon>
         <Search />
       </v-toolbar>
     </v-card>
@@ -19,8 +19,8 @@ export default {
     return {};
   },
   methods:{
-      goToLogin(){
-          this.$router.push("/login");
+      goToHome(){
+          this.$router.push("/home");
       },
   }
 };

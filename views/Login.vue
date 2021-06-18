@@ -41,13 +41,11 @@
     <p class="goToSignUp animate__animated animate__fadeIn">
       <a>Forgot password?</a>
     </p>
-    <p @click="goToSearch()" class="goToSignUp animate__animated animate__fadeIn">
-      <a>Search Now!</a>
-    </p>
-    <p @click="goToChatPage()" class="goToSignUp animate__animated animate__fadeIn">
-      <a>Chat Page</a>
+    <p @click="goToHome()" class="goToSignUp animate__animated animate__fadeIn">
+      <a class="c-third">Home</a>
     </p>
   </div>
+  
 </template>
 
 <script>
@@ -61,11 +59,8 @@ export default {
     goToSignUp(){
       this.$router.push("/register");
     },
-    goToSearch(){
-      this.$router.push("/search");
-    },
-    goToChatPage(){
-      this.$router.push("/chatPage");
+    goToHome(){
+      this.$router.push("/home");
     }
   }
 }

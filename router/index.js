@@ -10,7 +10,6 @@ import Home from './../views/Home'
 import NewContact from './../views/NewContact'
 import NewMessage from './../views/NewMessage'
 import ChatPage from './../views/ChatPage'
-import Profile from './../views/Profile'
 import Setting from './../views/Setting'
 import Search from './../views/Search'
 
@@ -46,10 +45,6 @@ export default new Router({
     {
       path: "/chatPage",
       component: ChatPage
-    },
-    {
-      path: "/profile",
-      component: Profile
     },
     {
       path: "/setting",

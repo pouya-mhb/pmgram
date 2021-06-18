@@ -3,7 +3,7 @@
     <v-card class="card" flat tile>
       <v-toolbar height="60px" color="#232F34" dark>
         <!-- the left icon when search is false -->
-        <v-icon v-show="!search" @click="goToLogin()">mdi-arrow-left</v-icon>
+        <v-icon v-show="!search" @click="goToHome()">mdi-arrow-left</v-icon>
         <!-- the left icon when search is true -->
         <v-icon v-show="search" @click="search = false" color="#F9AA33"
           >mdi-arrow-left</v-icon
@@ -18,8 +18,10 @@
           @click="openProfileModal()"
         ></v-img>
         <h3 v-show="!search" @click="openProfileModal()" class="contact-name">
-          Name
+          <span>Name</span>
+          <h6 class="green--text pa-0" style="font-size: 13px;">Actice</h6>
         </h3>
+        
         <v-spacer></v-spacer>
         <v-icon
           v-show="!search"
@@ -111,7 +113,7 @@
                 ></v-img>
               </v-col>
               <v-col cols="8" class="pl-1 pt-5">
-                <span style="color: #F9AA33; font-size:12px;"
+                <span style="font-size:12px;" class="c-secondary"
                   >Contact name</span
                 >
                 <v-text-field
@@ -132,24 +134,29 @@
             </v-row>
           </div>
           <div class="body">
-            <span style="color: #F9AA33; font-size:12px">Full name</span>
+            <span style="font-size:12px" class="c-secondary">Full name</span>
             <h3 class="profile-name white--text">
               Name Family
             </h3>
             <br />
-            <span style="color: #F9AA33; font-size:12px">Username</span>
+            <span style="font-size:12px" class="c-secondary">Username</span>
             <h3 class="profile-name white--text">
               @username
             </h3>
             <br />
-            <span style="color: #F9AA33; font-size:12px">Bio</span>
+            <span style="font-size:12px" class="c-secondary">Bio</span>
             <h3 class="profile-name white--text">
               This is my bio :)
             </h3>
             <br />
-            <span style="color: #F9AA33; font-size:12px">Email</span>
+            <span style="font-size:12px" class="c-secondary">Email</span>
             <h3 class="profile-name white--text">
               name@gmail.com
+            </h3>
+            <br />
+            <span style="font-size:12px" class="c-secondary">Status</span>
+            <h3 class="profile-name green--text">
+              Active
             </h3>
           </div>
         </div>
@@ -180,8 +187,8 @@ export default {
     clickOutside: vClickOutside.directive,
   },
   methods: {
-    goToLogin() {
-      this.$router.push("/login");
+    goToHome() {
+      this.$router.push("/home");
     },
     openSearch() {
       this.search = true;
