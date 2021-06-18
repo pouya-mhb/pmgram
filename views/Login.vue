@@ -15,7 +15,7 @@
         ref="email"
         v-model="login.email"
         autocomplete="off"
-        label="Email"
+        label="Username"
         color="#F9AA33"
         required
         dark

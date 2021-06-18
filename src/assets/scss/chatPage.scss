@@ -51,7 +51,7 @@
     }
   }
 
-  .message-box {
+  .newMessage-box {
     position: absolute;
     bottom: 0;
     background-color: $third;
@@ -70,6 +70,28 @@
       font-size: 26px;
       padding: 25px 0 0 20px;
       color: $secondary;
+    }
+  }
+  .send-messages{
+    position: absolute;
+    bottom: 65px;
+    right: 20px;
+
+    .box{
+      background-color: #f0a83cad;
+      border-radius: 12px 12px 0 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      max-width: 270px;
+      display: inline-block;     
+
+      .text{
+        line-height: 18px;
+      }
+      .time{
+        font-size: 13px;
+        text-align: right;
+      }
     }
   }
 }

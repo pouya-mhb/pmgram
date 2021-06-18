@@ -15,9 +15,9 @@
           src="./../src/assets/images/1.png"
           class="contact-img"
           v-show="!search"
-          @click="profile = true"
+          @click="openProfileModal()"
         ></v-img>
-        <h3 v-show="!search" @click="profile = true" class="contact-name">
+        <h3 v-show="!search" @click="openProfileModal()" class="contact-name">
           Name
         </h3>
         <v-spacer></v-spacer>
@@ -29,7 +29,7 @@
         >
       </v-toolbar>
     </v-card>
-
+    <!-- Options -->
     <div
       v-show="showOptions"
       v-click-outside="onClickOutside"
@@ -44,29 +44,40 @@
         <span class="grey--text pl-3">Delete chat</span>
       </div>
     </div>
-
-    <div class="no-message flex-center animate__animated animate__fadeIn">
+    <!-- No message box -->
+    <div v-show="noMessage" class="no-message flex-center animate__animated animate__fadeIn">
       <div class="box">
         <span class="px-4">There is no message yet...</span>
       </div>
     </div>
-
-    <div class="message-box pb-0 animate__animated animate__fadeIn">
+    <!-- Messages box -->
+    <!-- <div v-show="!noMessage" class="send-messages">
+      <div class="box float-right">
+        <div class="text pb-1">
+          <span>salaaaaaam</span>
+        </div>
+        <div class="time">
+        <span>10:30</span>
+        </div>
+      </div>
+    </div> -->
+    <!-- message input box -->
+    <div class="newMessage-box pb-0 animate__animated animate__fadeIn">
       <v-row class="pa-0">
         <v-col cols="10" class="py-0">
           <input
-            v-model="message"
+            v-model="newMessage"
             class="input grey--text px-1"
             type="text"
             placeholder="Write a message..."
           />
         </v-col>
         <v-col cols="2" class="pa-0">
-          <v-icon :class="{ disabled: !message }" class="icon">mdi-send</v-icon>
+          <v-icon :class="{ disabled: !newMessage }" class="icon">mdi-send</v-icon>
         </v-col>
       </v-row>
     </div>
-
+    <!-- Profile Modal -->
     <v-dialog
       v-model="profile"
       fullscreen
@@ -80,11 +91,11 @@
             >mdi-chevron-down</v-icon
           >
           <v-spacer></v-spacer>
-          <v-icon
-            @click="newName == true ? newName = false : newName = true"
-            class="pr-1 pt-2"
+          <v-icon @click="editName = true" v-show="!editName" class="pr-1 pt-2"
             >mdi-pencil</v-icon
           >
+          <v-icon v-show="editName" @click="closeEditName()">mdi-close</v-icon>
+          <v-icon v-show="editName" :disabled="!newName" class="pl-5">mdi-check</v-icon>
         </v-toolbar>
         <div class="dialog-body">
           <div class="header">
@@ -100,18 +111,21 @@
                 ></v-img>
               </v-col>
               <v-col cols="8" class="pl-1 pt-5">
-                <span style="color: #F9AA33; font-size:12px;">Contact name</span>
+                <span style="color: #F9AA33; font-size:12px;"
+                  >Contact name</span
+                >
                 <v-text-field
-                  placeholder="New name"
+                  placeholder="Enter a name"
                   color="#F9AA33"
-                  v-show="newName"
+                  v-show="editName"
+                  v-model="newName"
                   class="pa-0"
                   dark
                   autofocus
                   style="position: absolute; top:95px"
                 >
                 </v-text-field>
-                <h3 v-show="!newName" class="profile-name white--text">
+                <h3 v-show="!editName" class="profile-name white--text">
                   Name
                 </h3></v-col
               >
@@ -153,11 +167,13 @@ export default {
   },
   data() {
     return {
-      message: "",
+      newMessage: "",
       showOptions: false,
       search: false,
       profile: false,
-      newName: false,
+      editName: false,
+      newName: "",
+      noMessage: true,
     };
   },
   directives: {
@@ -173,6 +189,15 @@ export default {
     },
     onClickOutside() {
       this.showOptions = false;
+    },
+    openProfileModal() {
+      this.profile = true;
+      this.editName = false;
+      this.newName = "";
+    },
+    closeEditName() {
+      this.editName = false;
+      this.newName = "";
     },
   },
 };
@@ -190,9 +215,9 @@ export default {
     background-color: #232f34;
     width: 100%;
 
-    .title{
-      color: #F9AA33; 
-      font-size:12px;
+    .title {
+      color: #f9aa33;
+      font-size: 12px;
     }
     .profile-img {
       border-radius: 50%;
@@ -206,9 +231,9 @@ export default {
   .body {
     padding: 50px;
 
-    .title{
-      color: #F9AA33; 
-      font-size:12px;
+    .title {
+      color: #f9aa33;
+      font-size: 12px;
     }
     h3 {
       font-weight: 400;
