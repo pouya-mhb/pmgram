@@ -6,7 +6,6 @@
         <h2 class="pl-6"><span style="color:#F9AA33">PM</span>gram</h2>
         <v-spacer></v-spacer>
         <v-icon @click="goToSearch()">mdi-magnify</v-icon>
-        <v-icon class="pl-6" @click="openLogoutModal()">mdi-logout</v-icon>
       </v-toolbar>
     </v-card>
 
@@ -57,10 +56,9 @@
       v-model="sidebar"
       absolute
       left
-      temporary
       dark
       class="blue-grey darken-3"
-      style="width:82vw !important"
+      style="width:75vw !important"
     >
       <div class="menu-header">
         <v-img
@@ -69,57 +67,22 @@
           src="./../src/assets/images/1.png"
           class="menu-img float-left mr-3"
         ></v-img>
-        <h3 class="menu-info py-3">
-          MyName
-          <p class="c-secondary text-break">myname@gmail.com</p>
+        <h3 class="menu-info pt-4">
+          User Name
+          <p class="text-break grey--text">username@gmail.com</p>
         </h3>
       </div>
-
-      <v-list nav dense>
-        <v-list-item-group
-        >
-          <v-list-item>
-            <v-list-item-title>
-            <v-icon class="pr-2 pb-1">mdi-account-outline</v-icon>
-            Contacts
-            </v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>
-            <v-icon class="pr-2 pb-1">mdi-cog-outline</v-icon>
-            Setting
-            </v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
+      <div class="menu-items">
+        <li>
+          <v-icon class="icon pr-2 pb-1">mdi-account-outline</v-icon>
+          Contacts
+        </li>
+        <li @click="goToSeting()">
+          <v-icon class="icon pr-2 pb-1">mdi-cog-outline</v-icon>
+          Setting
+        </li>
+      </div>
     </v-navigation-drawer>
-
-    <!-- Logout modal -->
-    <v-dialog v-model="logoutModal">
-      <v-card
-        class="text-center pa-6 blue-grey darken-2"
-        style="border-radius: 20px"
-      >
-        <v-card-text class="px-0">
-          <p class="white--text" style="font-size: 17px">
-            Are you sure you want to leave?
-          </p>
-        </v-card-text>
-        <v-card-action>
-          <v-btn class="mx-4" color="blue-grey lighten-3" @click="goToLogin()">
-            Yes
-          </v-btn>
-          <v-btn
-            class="mx-4"
-            color="orange lighten-4"
-            @click="logoutModal = false"
-          >
-            No
-          </v-btn>
-        </v-card-action>
-      </v-card>
-    </v-dialog>
   </div>
 </template>
 
@@ -151,6 +114,9 @@ export default {
     openLogoutModal() {
       this.logoutModal = true;
     },
+    goToSeting() {
+      this.$router.push("/setting");
+    },
   },
 };
 </script>
@@ -158,6 +124,9 @@ export default {
 <style scoped>
 .v-icon.v-icon::after {
   background-color: transparent !important;
+}
+.v-list--nav .v-list-item {
+  padding-bottom: 2px;
 }
 .v-list-item__title {
   font-size: 14px !important;

@@ -21,7 +21,7 @@
           <span>Name</span>
           <h6 class="green--text pa-0" style="font-size: 13px;">Actice</h6>
         </h3>
-        
+
         <v-spacer></v-spacer>
         <v-icon
           v-show="!search"
@@ -47,7 +47,10 @@
       </div>
     </div>
     <!-- No message box -->
-    <div v-show="noMessage" class="no-message flex-center animate__animated animate__fadeIn">
+    <div
+      v-show="noMessage"
+      class="no-message flex-center animate__animated animate__fadeIn"
+    >
       <div class="box">
         <span class="px-4">There is no message yet...</span>
       </div>
@@ -75,7 +78,9 @@
           />
         </v-col>
         <v-col cols="2" class="pa-0">
-          <v-icon :class="{ disabled: !newMessage }" class="icon">mdi-send</v-icon>
+          <v-icon :class="{ disabled: !newMessage }" class="icon"
+            >mdi-send</v-icon
+          >
         </v-col>
       </v-row>
     </div>
@@ -97,7 +102,9 @@
             >mdi-pencil</v-icon
           >
           <v-icon v-show="editName" @click="closeEditName()">mdi-close</v-icon>
-          <v-icon v-show="editName" :disabled="!newName" class="pl-5">mdi-check</v-icon>
+          <v-icon v-show="editName" :disabled="!newName" class="pl-5"
+            >mdi-check</v-icon
+          >
         </v-toolbar>
         <div class="dialog-body">
           <div class="header">
@@ -108,7 +115,6 @@
                   max-width="70"
                   src="./../src/assets/images/1.png"
                   class="profile-img float-right"
-                  v-show="!search"
                   @click="profile = true"
                 ></v-img>
               </v-col>

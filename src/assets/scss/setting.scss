@@ -1,0 +1,86 @@
+.setting {
+  font-family: "Nunito";
+  margin: 0;
+  background-color: #2f3e44;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card {
+    width: 100vw;
+  }
+
+  .options {
+    width: 170px;
+    background-color: #2f3e44;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    box-shadow: 0 0 4px $third;
+    --animate-duration: 0.3s;
+
+    .item {
+      padding: 12px 0;
+    }
+  }
+
+  .header {
+    background-color: #232f34;
+    width: 100%;
+
+    .img {
+      border-radius: 50%;
+    }
+    .set-pic {
+      width: 45px;
+      height: 45px;
+      box-shadow: 0 0 3px #3b4549;
+      border-radius: 50px;
+      position: absolute;
+      top: 130px;
+      left: 118px;
+    }
+    .name {
+      font-size: 21px;
+      font-weight: 400;
+      margin-top: 20px;
+    }
+    .status {
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+
+  .account {
+    border-bottom: 8px solid #232f348f;
+    width: 100vw;
+    padding: 20px;
+
+    .box {
+      background-color: #00000025;
+      border-radius: 10px;
+
+      .account-info {
+        font-weight: 400;
+        font-size: 16px;
+      }
+
+      .account-title {
+        color: #f9aa33;
+        font-size: 12px !important;
+      }
+    }
+  }
+
+  .part {
+    width: 100vw;
+    padding: 20px;
+    text-align: left;
+
+    .item {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}

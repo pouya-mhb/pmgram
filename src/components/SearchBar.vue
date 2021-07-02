@@ -1,7 +1,6 @@
 <template>
   <div class="searchBar">
-
-      <v-text-field
+    <v-text-field
       v-model="filter"
       clearable
       autofocus
@@ -9,8 +8,8 @@
       placeholder="Search..."
       style="width: 280px;"
       color="grey"
-      class="ml-5 mt-5" 
-    ></v-text-field> 
+      class="ml-5 mt-5"
+    ></v-text-field>
   </div>
 </template>
 <script>
@@ -23,12 +22,12 @@ export default {
 };
 </script>
 <style lang="scss">
-.searchBar{
+.searchBar {
   .v-input__slot::before {
     border-style: none !important;
   }
-  .mdi-close::before{
-      padding-bottom: 5px;
+  .mdi-close::before {
+    padding-bottom: 5px;
   }
 }
 </style>

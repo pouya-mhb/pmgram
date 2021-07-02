@@ -1,4 +1,4 @@
-.home{
+.home {
   font-family: "Nunito";
   margin: 0;
   height: 100vh;
@@ -10,44 +10,60 @@
   .card {
     width: 100vw;
   }
-  .chat-items{
-      width: 100%;
-      .item{
-          height: 80px;
-          border-bottom: 1px solid #232f347e;
-          background-color: #37454b;
+  .chat-items {
+    width: 100%;
+    .item {
+      height: 80px;
+      border-bottom: 1px solid #232f347e;
+      background-color: #37454b;
 
-          .chat-img{
-              border-radius: 50%;
-              margin: 12px;
-          }
-          .chat-info{
-              color: #ffffff;
-              padding-top: 18px;
-
-              span{
-                  font-weight: 400;
-                  font-size: 18px;
-              }
-          }
-      }
-  }
-  .menu-header{
-    padding: 22px 20px;
-    height:17vh;
-    background-color: $third;
-    
-    .menu-img{
+      .chat-img {
         border-radius: 50%;
-    }
-    .menu-info{
+        margin: 12px;
+      }
+      .chat-info {
         color: #ffffff;
-        font-size: 17px;
-        font-weight: 400;
-        
-        p{
-            font-size: 15px;
+        padding-top: 18px;
+
+        span {
+          font-weight: 400;
+          font-size: 18px;
         }
+      }
+    }
+  }
+  .menu-header {
+    height: 120px;
+    padding-left: 20px;
+    background-color: $third;
+    display: flex;
+    align-items: center;
+
+    .menu-img {
+      border-radius: 50%;
+    }
+    .menu-info {
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 400;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+  .menu-items {
+    margin-top: 5px;
+    li {
+      padding: 15px;
+      display: block;
+      color: #fff;
+      font-size: 14px;
+
+      .icon {
+        color: #969696;
+        font-size: 27px;
+      }
     }
   }
 }

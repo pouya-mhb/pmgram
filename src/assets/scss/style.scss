@@ -6,16 +6,17 @@
 @import "profile.scss";
 @import "chatPage.scss";
 @import "home.scss";
+@import "setting.scss";
 
-.flex-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.v-align{
-    vertical-align: middle;
+.v-align {
+  vertical-align: middle;
 }
 .disabled {
-    pointer-events:none;
-    opacity:0.5;  
+  pointer-events: none;
+  opacity: 0.5;
 }
