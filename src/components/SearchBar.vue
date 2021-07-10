@@ -4,6 +4,8 @@
       v-model="filter"
       clearable
       autofocus
+      rounded
+      autocomplete="off"
       id="filterInput"
       placeholder="Search..."
       style="width: 280px;"
@@ -23,6 +25,9 @@ export default {
 </script>
 <style lang="scss">
 .searchBar {
+  .v-input__slot {
+    padding: 0 !important;
+  }
   .v-input__slot::before {
     border-style: none !important;
   }

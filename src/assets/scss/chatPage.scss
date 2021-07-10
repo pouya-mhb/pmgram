@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: hight 0.3 ease-out;
 
   .card {
     width: 100vw;
@@ -36,7 +35,6 @@
     right: 10px;
     box-shadow: 0 0 4px $third;
     --animate-duration: 0.3s;
-
 
     .item {
       padding: 12px 0;
@@ -74,23 +72,23 @@
       color: $secondary;
     }
   }
-  .send-messages{
+  .send-messages {
     position: absolute;
     bottom: 65px;
     right: 20px;
 
-    .box{
+    .box {
       background-color: #f0a83cad;
       border-radius: 12px 12px 0 12px;
       padding: 10px;
       margin-bottom: 10px;
       max-width: 270px;
-      display: inline-block;     
+      display: inline-block;
 
-      .text{
+      .text {
         line-height: 18px;
       }
-      .time{
+      .time {
         font-size: 13px;
         text-align: right;
       }

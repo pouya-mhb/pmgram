@@ -8,7 +8,7 @@
         <v-icon @click="goToSearch()">mdi-magnify</v-icon>
       </v-toolbar>
     </v-card>
-
+    <!-- Chats  -->
     <div class="chat-items animate__animated animate__fadeIn">
       <div class="item">
         <v-img
@@ -19,7 +19,16 @@
           @click="profile = true"
         ></v-img>
         <h3 @click="goToChatPage()" class="chat-info">
-          <span>Name</span>
+          <v-row>
+            <v-col class="pl-0">
+              <span class="name">Name</span>
+            </v-col>
+            <v-col>
+              <v-chip class="float-right mt-1" color="#232f34" dark small
+                >12</v-chip
+              >
+            </v-col>
+          </v-row>
           <h6 class="pa-0 green--text" style="font-size: 13px;">
             Active
           </h6>
@@ -34,7 +43,7 @@
           @click="profile = true"
         ></v-img>
         <h3 @click="openProfileModal()" class="chat-info">
-          <span>{{ item.name }}</span>
+          <span class="name">{{ item.name }}</span>
           <h6
             class="pa-0"
             style="font-size: 13px;"
@@ -73,7 +82,7 @@
         </h3>
       </div>
       <div class="menu-items">
-        <li>
+        <li @click="goToContacts()">
           <v-icon class="icon pr-2 pb-1">mdi-account-outline</v-icon>
           Contacts
         </li>
@@ -93,9 +102,6 @@ export default {
       chats: [
         { name: "Parnia", status: "Invisible" },
         { name: "Pouya", status: "Do not disturb" },
-        { name: "Arash", status: "Away" },
-        { name: "Sarina", status: "Active" },
-        { name: "Nima", status: "Invisible" },
       ],
       logoutModal: false,
       sidebar: false,
@@ -117,11 +123,14 @@ export default {
     goToSeting() {
       this.$router.push("/setting");
     },
+    goToContacts() {
+      this.$router.push("/contacts");
+    },
   },
 };
 </script>
 
-<style scoped>
+<style>
 .v-icon.v-icon::after {
   background-color: transparent !important;
 }

@@ -77,6 +77,7 @@
             placeholder="Write a message..."
           />
         </v-col>
+        <!-- @input="autoDir(newMessage)"-->
         <v-col cols="2" class="pa-0">
           <v-icon :class="{ disabled: !newMessage }" class="icon"
             >mdi-send</v-icon
@@ -172,7 +173,7 @@
 </template>
 
 <script>
-import Search from "./../src/components/SearchBar.vue";
+const Search = () => import("@/components/SearchBar");
 import vClickOutside from "v-click-outside";
 export default {
   components: {
@@ -187,6 +188,41 @@ export default {
       editName: false,
       newName: "",
       noMessage: true,
+      firstLetter: "",
+      // persian: [
+      //   "ا",
+      //   "ب",
+      //   "پ",
+      //   "ت",
+      //   "س",
+      //   "ج",
+      //   "چ",
+      //   "ح",
+      //   "خ",
+      //   "د",
+      //   "ذ",
+      //   "ر",
+      //   "ز",
+      //   "ژ",
+      //   "س",
+      //   "ش",
+      //   "ص",
+      //   "ض",
+      //   "ط",
+      //   "ظ",
+      //   "ع",
+      //   "غ",
+      //   "ف",
+      //   "ق",
+      //   "ک",
+      //   "گ",
+      //   "ل",
+      //   "م",
+      //   "ن",
+      //   "و",
+      //   "ه",
+      //   "ی",
+      // ],
     };
   },
   directives: {
@@ -212,7 +248,18 @@ export default {
       this.editName = false;
       this.newName = "";
     },
+    // autoDir(str) {
+    //   let inputs = document.getElementsByClassName("input");
+    //   for (var index = 0; index < str.length; index++) {
+    //     if (this.persian.includes(str)) {
+    //       inputs[index].className = "input grey--text px-1 rtl";
+    //     } else {
+    //       inputs[index].className = "input grey--text px-1 ltr";
+    //     }
+    //   }
+    // },
   },
+  mounted() {},
 };
 </script>
 
@@ -253,5 +300,17 @@ export default {
       font-size: 17px;
     }
   }
+}
+
+.rtl {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: bidi-override !important;
+}
+
+.ltr {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: bidi-override !important;
 }
 </style>

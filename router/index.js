@@ -1,18 +1,18 @@
 import Vue from "vue";
-import Router from 'vue-router';
+import Router from "vue-router";
 Vue.use(Router);
 
 // import pages
-import Welcome from './../views/Welcome'
-import SignUp from './../views/SignUp'
-import Login from './../views/Login'
-import Home from './../views/Home'
-import NewContact from './../views/NewContact'
-import NewMessage from './../views/NewMessage'
-import ChatPage from './../views/ChatPage'
-import Setting from './../views/Setting'
-import Search from './../views/Search'
-
+import Welcome from "./../views/Welcome";
+import SignUp from "./../views/SignUp";
+import Login from "./../views/Login";
+import Home from "./../views/Home";
+import NewContact from "./../views/NewContact";
+import NewMessage from "./../views/NewMessage";
+import ChatPage from "./../views/ChatPage";
+import Setting from "./../views/Setting";
+import Search from "./../views/Search";
+import Contacts from "./../views/Contacts";
 
 export default new Router({
   mode: "history", // https://router.vuejs.org/api/#mode
@@ -20,43 +20,47 @@ export default new Router({
   routes: [
     {
       path: "/welcome",
-      component: Welcome
+      component: Welcome,
     },
     {
       path: "/register",
-      component: SignUp
+      component: SignUp,
     },
     {
       path: "/login",
-      component: Login
+      component: Login,
     },
     {
       path: "/home",
-      component: Home
+      component: Home,
     },
     {
       path: "/newContact",
-      component: NewContact
+      component: NewContact,
     },
     {
       path: "/newMessage",
-      component: NewMessage
+      component: NewMessage,
     },
     {
       path: "/chatPage",
-      component: ChatPage
+      component: ChatPage,
     },
     {
       path: "/setting",
-      component: Setting
+      component: Setting,
     },
     {
       path: "/search",
-      component: Search
+      component: Search,
+    },
+    {
+      path: "/contacts",
+      component: Contacts,
     },
     {
       path: "/",
-      redirect: "/welcome"
+      redirect: "/welcome",
     },
   ],
 });

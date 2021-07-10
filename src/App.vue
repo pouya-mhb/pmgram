@@ -16,9 +16,7 @@ export default {
 @import "@/assets/scss/style";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&family=Ubuntu:wght@300;400&display=swap");
-body {
-  font-family: "Nunito";
-}
+
 h1,
 h2,
 h3,
@@ -36,6 +34,9 @@ span {
 html,
 body {
   max-width: 100%;
+  font-family: "Nunito";
   overflow-x: hidden;
+  background-color: #344955;
+  z-index: -10;
 }
 </style>
