@@ -13,6 +13,13 @@
           >Contacts</v-toolbar-title
         >
         <v-spacer></v-spacer>
+        <v-icon
+          v-show="!search"
+          @click="goToNewContact()"
+          class="mr-8"
+          style="font-size: 26px"
+          >mdi-account-plus-outline</v-icon
+        >
         <v-icon v-show="!search" @click="search = !search">mdi-magnify</v-icon>
       </v-toolbar>
     </v-card>
@@ -70,6 +77,9 @@ export default {
   methods: {
     goToHome() {
       this.$router.push("/home");
+    },
+    goToNewContact() {
+      this.$router.push("/newContact");
     },
   },
 };

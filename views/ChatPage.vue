@@ -77,7 +77,6 @@
             placeholder="Write a message..."
           />
         </v-col>
-        <!-- @input="autoDir(newMessage)"-->
         <v-col cols="2" class="pa-0">
           <v-icon :class="{ disabled: !newMessage }" class="icon"
             >mdi-send</v-icon
@@ -100,7 +99,7 @@
           >
           <v-spacer></v-spacer>
           <v-icon @click="editName = true" v-show="!editName" class="pr-1 pt-2"
-            >mdi-pencil</v-icon
+            >mdi-pencil-outline</v-icon
           >
           <v-icon v-show="editName" @click="closeEditName()">mdi-close</v-icon>
           <v-icon v-show="editName" :disabled="!newName" class="pl-5"
@@ -248,16 +247,6 @@ export default {
       this.editName = false;
       this.newName = "";
     },
-    // autoDir(str) {
-    //   let inputs = document.getElementsByClassName("input");
-    //   for (var index = 0; index < str.length; index++) {
-    //     if (this.persian.includes(str)) {
-    //       inputs[index].className = "input grey--text px-1 rtl";
-    //     } else {
-    //       inputs[index].className = "input grey--text px-1 ltr";
-    //     }
-    //   }
-    // },
   },
   mounted() {},
 };
@@ -300,17 +289,5 @@ export default {
       font-size: 17px;
     }
   }
-}
-
-.rtl {
-  direction: rtl !important;
-  text-align: right !important;
-  unicode-bidi: bidi-override !important;
-}
-
-.ltr {
-  direction: ltr !important;
-  text-align: left !important;
-  unicode-bidi: bidi-override !important;
 }
 </style>

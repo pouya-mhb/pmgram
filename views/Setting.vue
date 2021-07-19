@@ -14,7 +14,7 @@
       class="options py-2 px-3 animate__animated animate__fadeInDown"
     >
       <div class="item" @click="editProfile('name')">
-        <v-icon color="grey">mdi-pencil</v-icon>
+        <v-icon color="grey">mdi-pencil-outline</v-icon>
         <span class="grey--text pl-3">Edit Name</span>
       </div>
       <div class="item" @click="openLogoutModal()">
@@ -67,7 +67,7 @@
               color="grey"
               class="float-right pr-2"
               dense
-              >mdi-pencil</v-icon
+              >mdi-pencil-outline</v-icon
             >
           </v-col>
         </v-row>
@@ -87,7 +87,7 @@
               color="grey"
               class="float-right pr-2"
               dense
-              >mdi-pencil</v-icon
+              >mdi-pencil-outline</v-icon
             >
           </v-col>
         </v-row>

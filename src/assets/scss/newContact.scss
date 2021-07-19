@@ -1,0 +1,38 @@
+.newContact {
+  font-family: "Nunito";
+  margin: 0;
+  height: 100vh;
+  background-color: #2f3e44;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card {
+    width: 100vw;
+  }
+  .addType {
+    padding-top: 5vh;
+    &-box {
+      background-color: #33444b;
+      color: #e4e0e0;
+      width: 250px;
+      height: 90px;
+      border-radius: 5px;
+      box-shadow: 5px 5px 10px #242c30, -5px -5px 10px #303e44;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 15px;
+
+      .icon {
+        color: #cfc6c6;
+        font-size: 30px;
+        padding-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
