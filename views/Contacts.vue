@@ -1,7 +1,7 @@
 <template>
   <div class="contacts">
     <v-card class="card" flat tile>
-      <v-toolbar style="box-shadow: none !important" color="#232F34" dark>
+      <v-toolbar color="#232F34" dark>
         <!-- the left icon when search is false -->
         <v-icon v-show="!search" @click="goToHome()">mdi-arrow-left</v-icon>
         <!-- the left icon when search is true -->
@@ -24,20 +24,17 @@
       </v-toolbar>
     </v-card>
 
-    <div class="contacts animate__animated animate__fadeIn">
+    <div class="contacts animated fadeIn">
       <div class="contact" v-for="(item, index) in contacts" :key="index">
-        <v-img
-          max-height="55"
-          max-width="55"
+        <img
           src="./../src/assets/images/1.png"
           class="contact-img float-left"
           @click="profile = true"
-        ></v-img>
+        />
         <h3 @click="openProfileModal()" class="contact-info">
           <span class="name">{{ item.name }}</span>
           <h6
-            class="pa-0"
-            style="font-size: 13px;"
+            class="status pa-0"
             :class="{
               'green--text': item.status == 'Active',
               'grey--text': item.status == 'Invisible',

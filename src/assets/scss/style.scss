@@ -10,15 +10,70 @@
 @import "contacts.scss";
 @import "newContact.scss";
 
+// Flex
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+// Vertical align
 .v-align {
   vertical-align: middle;
 }
+// Small font-size
+.small-font {
+  font-size: 14px;
+}
+// Bold font
+.bold {
+  font-weight: bold !important;
+}
+// Disabled
 .disabled {
   pointer-events: none;
   opacity: 0.5;
+}
+// FadeIn animation
+.animated {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+// Toolbar
+.v-toolbar {
+  box-shadow: none !important;
+  flex: none !important;
+}
+.v-icon.v-icon::after {
+  background-color: transparent !important;
+}
+// Dialogs
+.dialog-title {
+  font-size: 19px;
+  padding-top: 1px !important;
+}
+.dialog-body {
+  height: 100%;
+  background-color: #344955;
 }

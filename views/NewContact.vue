@@ -1,13 +1,13 @@
 <template>
   <div class="newContact">
     <v-card class="card" flat tile>
-      <v-toolbar style="box-shadow: none !important" color="#232F34" dark>
+      <v-toolbar color="#232F34" dark>
         <v-icon @click="goToHome()">mdi-arrow-left</v-icon>
-        <v-toolbar-title class="pl-8">New Contacts</v-toolbar-title>
+        <v-toolbar-title class="pl-8">New Contact</v-toolbar-title>
       </v-toolbar>
     </v-card>
 
-    <div class="addType animate__animated animate__fadeIn">
+    <div class="addType animated fadeIn">
       <v-row class="pt-5 pb-8" @click="openModal('email')">
         <div class="addType-box">
           <v-icon class="icon">mdi-email-outline</v-icon>
@@ -25,13 +25,13 @@
     </div>
     <v-dialog v-model="openAddContactModal" fullscreen>
       <v-card class="card bc-primary" flat tile>
-        <v-toolbar style="box-shadow: none !important;" color="#232F34" dark>
+        <v-toolbar color="#232F34" dark>
           <v-icon @click="openAddContactModal = false">mdi-close</v-icon>
-          <span v-if="byEmail" class="pl-8" style="font-size:20px"
+          <span v-if="byEmail" class="dialog-title pl-8"
             >Add Contact
             <small class="grey--text">(By Email Address)</small></span
           >
-          <span v-if="byId" class="pl-8" style="font-size:20px"
+          <span v-if="byId" class="dialog-title pl-8"
             >Add Contact <small class="grey--text">(By PMgram ID)</small></span
           >
           <v-spacer></v-spacer>
@@ -56,8 +56,7 @@
           </v-text-field>
 
           <v-btn
-            style="font-weight: bold"
-            class="bc-secondary text-capitalize mt-7 float-right"
+            class="bc-secondary text-capitalize float-right mt-7 bold"
             rounded
             :disabled="(byEmail && !userEmail) || (byId && !userId)"
           >

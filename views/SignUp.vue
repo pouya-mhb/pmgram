@@ -8,9 +8,7 @@
     </v-card>
     <br />
     <br />
-    <div 
-    class="bc-primary animate__animated animate__fadeIn" 
-    style="width:80vw">
+    <div class="bc-primary animated fadeIn" style="width:80vw">
       <v-text-field
         ref="firstName"
         v-model="register.firstName"
@@ -75,12 +73,9 @@
       ></v-text-field>
     </div>
     <br />
-    <v-btn 
-    class="btn bc-secondary c-primary animate__animated animate__fadeIn"
-      >Submit</v-btn
-    >
+    <v-btn class="btn bc-secondary c-primary animated fadeIn">Submit</v-btn>
     <br />
-    <p class="goToLogin animate__animated animate__fadeIn">
+    <p class="goToLogin animated fadeIn">
       <a @click="goToLogin()">Registered before?</a>
     </p>
   </div>
@@ -90,7 +85,7 @@
 export default {
   data() {
     return {
-      register:{},
+      register: {},
     };
   },
 
@@ -98,9 +93,9 @@ export default {
     goToWelcome() {
       this.$router.push("/welcome");
     },
-    goToLogin(){
+    goToLogin() {
       this.$router.push("/login");
-    }
+    },
   },
 };
 </script>

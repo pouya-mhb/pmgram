@@ -9,17 +9,15 @@
           >mdi-arrow-left</v-icon
         >
         <Search v-show="search" />
-        <v-img
-          max-height="40"
-          max-width="40"
+        <img
           src="./../src/assets/images/1.png"
           class="contact-img"
           v-show="!search"
           @click="openProfileModal()"
-        ></v-img>
+        />
         <h3 v-show="!search" @click="openProfileModal()" class="contact-name">
           <span>Name</span>
-          <h6 class="green--text pa-0" style="font-size: 13px;">Actice</h6>
+          <h6 class="status green--text pa-0">Actice</h6>
         </h3>
 
         <v-spacer></v-spacer>
@@ -47,10 +45,7 @@
       </div>
     </div>
     <!-- No message box -->
-    <div
-      v-show="noMessage"
-      class="no-message flex-center animate__animated animate__fadeIn"
-    >
+    <div v-show="noMessage" class="no-message flex-center animated fadeIn">
       <div class="box">
         <span class="px-4">There is no message yet...</span>
       </div>
@@ -67,7 +62,7 @@
       </div>
     </div> -->
     <!-- message input box -->
-    <div class="newMessage-box pb-0 animate__animated animate__fadeIn">
+    <div class="newMessage-box pb-0 animated fadeIn">
       <v-row class="pa-0">
         <v-col cols="10" class="py-0">
           <input
@@ -88,12 +83,10 @@
     <v-dialog
       v-model="profile"
       fullscreen
-      hide-overlay
       transition="dialog-bottom-transition"
-      scrollable
     >
-      <v-card class="card" flat tile>
-        <v-toolbar style="box-shadow: none !important" color="#232F34" dark>
+      <v-card class="card bc-primary" flat tile>
+        <v-toolbar color="#232F34" dark>
           <v-icon v-show="!search" @click="profile = false" large
             >mdi-chevron-down</v-icon
           >
@@ -101,27 +94,26 @@
           <v-icon @click="editName = true" v-show="!editName" class="pr-1 pt-2"
             >mdi-pencil-outline</v-icon
           >
-          <v-icon v-show="editName" @click="closeEditName()">mdi-close</v-icon>
-          <v-icon v-show="editName" :disabled="!newName" class="pl-5"
-            >mdi-check</v-icon
+          <span v-show="editName" @click="closeEditName()">Cancel</span>
+          <span
+            v-show="editName"
+            :class="!newName ? 'disabled' : ''"
+            class="pl-5"
+            >Save</span
           >
         </v-toolbar>
         <div class="dialog-body">
           <div class="header">
             <v-row class="py-4" style="width: 100vw">
               <v-col cols="4">
-                <v-img
-                  max-height="70"
-                  max-width="70"
+                <img
                   src="./../src/assets/images/1.png"
                   class="profile-img float-right"
                   @click="profile = true"
-                ></v-img>
+                />
               </v-col>
               <v-col cols="8" class="pl-1 pt-5">
-                <span style="font-size:12px;" class="c-secondary"
-                  >Contact name</span
-                >
+                <span class="info-title c-secondary">Contact name</span>
                 <v-text-field
                   placeholder="Enter a name"
                   color="#F9AA33"
@@ -133,35 +125,35 @@
                   style="position: absolute; top:95px"
                 >
                 </v-text-field>
-                <h3 v-show="!editName" class="profile-name white--text">
+                <h3 v-show="!editName" class="profile-info white--text">
                   Name
                 </h3></v-col
               >
             </v-row>
           </div>
           <div class="body">
-            <span style="font-size:12px" class="c-secondary">Full name</span>
-            <h3 class="profile-name white--text">
+            <span class="info-title c-secondary">Full name</span>
+            <h3 class="profile-info white--text">
               Name Family
             </h3>
             <br />
-            <span style="font-size:12px" class="c-secondary">Username</span>
-            <h3 class="profile-name white--text">
+            <span class="info-title c-secondary">Username</span>
+            <h3 class="profile-info white--text">
               @username
             </h3>
             <br />
-            <span style="font-size:12px" class="c-secondary">Bio</span>
-            <h3 class="profile-name white--text">
+            <span class="info-title c-secondary">Bio</span>
+            <h3 class="profile-info white--text">
               This is my bio :)
             </h3>
             <br />
-            <span style="font-size:12px" class="c-secondary">Email</span>
-            <h3 class="profile-name white--text">
+            <span class="info-title c-secondary">Email</span>
+            <h3 class="profile-info white--text">
               name@gmail.com
             </h3>
             <br />
-            <span style="font-size:12px" class="c-secondary">Status</span>
-            <h3 class="profile-name green--text">
+            <span class="info-title c-secondary">Status</span>
+            <h3 class="profile-info green--text">
               Active
             </h3>
           </div>
@@ -188,40 +180,6 @@ export default {
       newName: "",
       noMessage: true,
       firstLetter: "",
-      // persian: [
-      //   "ا",
-      //   "ب",
-      //   "پ",
-      //   "ت",
-      //   "س",
-      //   "ج",
-      //   "چ",
-      //   "ح",
-      //   "خ",
-      //   "د",
-      //   "ذ",
-      //   "ر",
-      //   "ز",
-      //   "ژ",
-      //   "س",
-      //   "ش",
-      //   "ص",
-      //   "ض",
-      //   "ط",
-      //   "ظ",
-      //   "ع",
-      //   "غ",
-      //   "ف",
-      //   "ق",
-      //   "ک",
-      //   "گ",
-      //   "ل",
-      //   "م",
-      //   "ن",
-      //   "و",
-      //   "ه",
-      //   "ی",
-      // ],
     };
   },
   directives: {
@@ -253,26 +211,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-icon.v-icon::after {
-  background-color: transparent !important;
-}
 .dialog-body {
-  height: 92vh;
-  background-color: #344955;
-
   .header {
     background-color: #232f34;
     width: 100%;
 
-    .title {
-      color: #f9aa33;
-      font-size: 12px;
-    }
     .profile-img {
       border-radius: 50%;
+      max-height: 70px;
+      max-width: 70px;
     }
-    .profile-name {
-      font-size: 21px;
+    .info-title {
+      font-size: 12px;
+    }
+    .profile-info {
+      font-size: 20px;
       font-weight: 400;
     }
   }
@@ -280,7 +233,7 @@ export default {
   .body {
     padding: 50px;
 
-    .title {
+    .info-title {
       color: #f9aa33;
       font-size: 12px;
     }

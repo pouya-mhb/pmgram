@@ -3,21 +3,19 @@
     <v-card class="card" flat tile>
       <v-toolbar height="60px" color="#232F34" dark>
         <v-icon @click.stop="sidebar = !sidebar">mdi-menu</v-icon>
-        <h2 class="pl-6"><span style="color:#F9AA33">PM</span>gram</h2>
+        <h2 class="pl-6"><span class="c-secondary">PM</span>gram</h2>
         <v-spacer></v-spacer>
         <v-icon @click="goToSearch()">mdi-magnify</v-icon>
       </v-toolbar>
     </v-card>
     <!-- Chats  -->
-    <div class="chat-items animate__animated animate__fadeIn">
+    <div class="chat-items animated fadeIn">
       <div class="item">
-        <v-img
-          max-height="55"
-          max-width="55"
+        <img
           src="./../src/assets/images/1.png"
           class="chat-img float-left"
           @click="profile = true"
-        ></v-img>
+        />
         <h3 @click="goToChatPage()" class="chat-info">
           <v-row>
             <v-col class="pl-0">
@@ -35,18 +33,15 @@
         </h3>
       </div>
       <div class="item" v-for="(item, index) in chats" :key="index">
-        <v-img
-          max-height="55"
-          max-width="55"
+        <img
           src="./../src/assets/images/1.png"
           class="chat-img float-left"
           @click="profile = true"
-        ></v-img>
+        />
         <h3 @click="openProfileModal()" class="chat-info">
           <span class="name">{{ item.name }}</span>
           <h6
-            class="pa-0"
-            style="font-size: 13px;"
+            class="status pa-0"
             :class="{
               'green--text': item.status == 'Active',
               'grey--text': item.status == 'Invisible',
@@ -70,12 +65,10 @@
       style="width:75vw !important"
     >
       <div class="menu-header">
-        <v-img
-          max-height="65"
-          max-width="65"
+        <img
           src="./../src/assets/images/1.png"
           class="menu-img float-left mr-3"
-        ></v-img>
+        />
         <h3 class="menu-info pt-4">
           User Name
           <p class="text-break grey--text">username@gmail.com</p>
@@ -131,13 +124,10 @@ export default {
 </script>
 
 <style>
-.v-icon.v-icon::after {
-  background-color: transparent !important;
-}
 .v-list--nav .v-list-item {
   padding-bottom: 2px;
 }
 .v-list-item__title {
-  font-size: 14px !important;
+  font-size: 18px !important;
 }
 </style>

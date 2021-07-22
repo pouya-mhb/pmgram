@@ -1,7 +1,7 @@
 <template>
   <div class="setting">
     <v-card class="card" flat tile>
-      <v-toolbar style="box-shadow: none !important" color="#232F34" dark>
+      <v-toolbar color="#232F34" dark>
         <v-icon @click="goToHome()">mdi-arrow-left</v-icon>
         <v-spacer></v-spacer>
         <v-icon @click="showOptions = true">mdi-dots-vertical</v-icon>
@@ -25,13 +25,11 @@
     <div class="header">
       <v-row class="pb-5" style="width: 100vw">
         <v-col cols="6">
-          <v-img
-            max-height="120"
-            max-width="120"
+          <img
             src="./../src/assets/images/1.png"
             class="img float-right"
             @click="profile = true"
-          ></v-img>
+          />
           <p class="set-pic bc-primary flex-center">
             <v-icon class="white--text v-align">mdi-camera-plus</v-icon>
           </p>
@@ -44,7 +42,7 @@
         </v-col>
       </v-row>
     </div>
-    <div class="account animate__animated animate__fadeIn">
+    <div class="account animated fadeIn">
       <p class="c-secondary mb-3">Account</p>
       <div class="box py-2 px-3">
         <span class="account-title">Email</span>
@@ -93,7 +91,7 @@
         </v-row>
       </div>
     </div>
-    <div class="part animate__animated animate__fadeIn">
+    <div class="part animated fadeIn">
       <p class="c-secondary mb-2">Setting</p>
       <v-row class="pt-2 px-2">
         <v-col class="pr-0">
@@ -101,7 +99,7 @@
             >Show my email address to everyone.</span
           >
           <br />
-          <small class="grey--text" style="font-size:14px"
+          <small class="grey--text small-font"
             >You can turn it off to hide your email address in your profile.
             also you won't see email address for other people.</small
           >
@@ -122,7 +120,7 @@
             >Show my profile picture to everyone.</span
           >
           <br />
-          <small class="grey--text" style="font-size:14px"
+          <small class="grey--text small-font"
             >You can turn it off to hide your profile picture in your profile.
           </small>
         </v-col>
@@ -151,17 +149,15 @@
         <v-card-action>
           <v-btn
             class="mx-4"
-            color="blue-grey lighten-3"
-            style="font-weight: bold"
+            color="blue-grey lighten-3 text-capitalize bold"
             to="/login"
           >
             Yes
           </v-btn>
           <v-btn
             class="mx-4"
-            color="orange lighten-4"
+            color="orange lighten-4 text-capitalize bold"
             @click="logoutModal = false"
-            style="font-weight: bold"
           >
             No
           </v-btn>
@@ -169,23 +165,18 @@
       </v-card>
     </v-dialog>
     <!-- name edit modal -->
-    <v-dialog v-model="editModal" fullscreen hide-overlay scrollable>
+    <v-dialog v-model="editModal" fullscreen scrollable>
       <v-card class="card" flat tile>
-        <v-toolbar style="box-shadow: none !important;" color="#232F34" dark>
+        <v-toolbar color="#232F34" dark>
           <v-icon @click="editModal = false">mdi-close</v-icon>
-          <span v-if="editName" class="pl-8" style="font-size:20px"
-            >Edit Name</span
-          >
-          <span v-if="editUserName" class="pl-8" style="font-size:20px"
+          <span v-if="editName" class="dialog-title pl-8">Edit Name</span>
+          <span v-if="editUserName" class="dialog-title pl-8"
             >Edit Username</span
           >
-          <span v-if="editBio" class="pl-8" style="font-size:20px"
-            >Edit Bio</span
-          >
+          <span v-if="editBio" class="dialog-title pl-8">Edit Bio</span>
           <v-spacer></v-spacer>
           <v-btn
-            class="float-right bc-primary c-secondary text-capitalize"
-            style="font-weight: bold"
+            class="float-right bc-primary c-secondary text-capitalize bold"
             rounded
             :disabled="!edited.firstName && !edited.username && !edited.bio"
             >Save</v-btn
@@ -222,7 +213,7 @@
             >
             </v-text-field>
             <br />
-            <small class="grey--text text--lighten-2" style="font-size:14px"
+            <small class="grey--text text--lighten-2 small-font"
               >You can choose a username. So people will be able to find you by
               this username without needing your phone number.</small
             >
@@ -238,7 +229,7 @@
             >
             </v-text-field>
             <br />
-            <small class="grey--text text--lighten-2" style="font-size:14px"
+            <small class="grey--text text--lighten-2 small-font"
               >You can add a few lines about yourself. Anyone who opens your
               profile will see this text.</small
             >
@@ -300,16 +291,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.v-icon.v-icon::after {
-  background-color: transparent !important;
-}
-.v-toolbar {
-  flex: none !important;
-}
-.dialog-body {
-  height: 100%;
-  background-color: #344955;
-}
-</style>

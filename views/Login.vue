@@ -8,9 +8,7 @@
     </v-card>
     <br />
     <br />
-    <div 
-    class="bc-primary animate__animated animate__fadeIn" 
-    style="width:80vw">
+    <div class="bc-primary animated fadeIn" style="width:80vw">
       <v-text-field
         ref="email"
         v-model="login.email"
@@ -33,35 +31,31 @@
     </div>
     <br />
     <br />
-    <v-btn 
-    class="btn bc-secondary c-primary animate__animated animate__fadeIn"
-      >Login</v-btn
-    >
+    <v-btn class="btn bc-secondary c-primary animated fadeIn">Login</v-btn>
     <br />
-    <p class="goToSignUp animate__animated animate__fadeIn">
+    <p class="goToSignUp animated fadeIn">
       <a>Forgot password?</a>
     </p>
-    <p @click="goToHome()" class="goToSignUp animate__animated animate__fadeIn">
+    <p @click="goToHome()" class="goToSignUp animated fadeIn">
       <a class="c-third">Home</a>
     </p>
   </div>
-  
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      login:{},
-    }
+  data() {
+    return {
+      login: {},
+    };
   },
-  methods:{
-    goToSignUp(){
+  methods: {
+    goToSignUp() {
       this.$router.push("/register");
     },
-    goToHome(){
+    goToHome() {
       this.$router.push("/home");
-    }
-  }
-}
+    },
+  },
+};
 </script>

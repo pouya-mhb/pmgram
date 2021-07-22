@@ -1,35 +1,33 @@
 <template>
   <div class="welcome">
-    <div 
-    class="logo animate__animated animate__fadeIn" 
-    style="position: relative;">
+    <div class="logo animated fadeIn">
       <v-icon class="p-icon">mdi-message-text</v-icon>
       <v-icon medium class="m-icon">mdi-alpha-m</v-icon>
     </div>
-    <div class="title mt-1 animate__animated animate__fadeIn">
+    <div class="title animated fadeIn mt-1">
       <h2>PMgram</h2>
       <p class="pt-1">Free, Fast And Secure</p>
     </div>
-    <br>
-    <br>
-    <v-btn 
-    class="btn bc-secondary c-primary animate__animated animate__fadeIn" 
-    @click="goToRegisterPage()">start</v-btn>
+    <br />
+    <br />
+    <v-btn
+      class="btn bc-secondary c-primary animated fadeIn"
+      @click="goToRegisterPage()"
+      >start</v-btn
+    >
   </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
+  data() {
+    return {};
+  },
 
-        }
+  methods: {
+    goToRegisterPage() {
+      this.$router.push("/register");
     },
-
-    methods:{
-        goToRegisterPage(){
-          this.$router.push("/register");
-        },
-    },
-}
+  },
+};
 </script>

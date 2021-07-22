@@ -20,6 +20,8 @@
       .chat-img {
         border-radius: 50%;
         margin: 12px;
+        max-width: 55px;
+        max-height: 55px;
       }
       .chat-info {
         color: #ffffff;
@@ -28,6 +30,9 @@
         .name {
           font-weight: 400;
           font-size: 18px;
+        }
+        .status {
+          font-size: 13px;
         }
       }
     }
@@ -41,6 +46,8 @@
 
     .menu-img {
       border-radius: 50%;
+      max-height: 65px;
+      max-width: 65px;
     }
     .menu-info {
       color: #ffffff;
