@@ -9,6 +9,7 @@
 @import "setting.scss";
 @import "contacts.scss";
 @import "newContact.scss";
+@import "newMessage.scss";
 
 // Flex
 .flex-center {
@@ -75,5 +76,5 @@
 }
 .dialog-body {
   height: 100%;
-  background-color: #344955;
+  background-color: $primary;
 }

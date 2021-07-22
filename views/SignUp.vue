@@ -7,7 +7,6 @@
       </v-toolbar>
     </v-card>
     <br />
-    <br />
     <div class="bc-primary animated fadeIn" style="width:80vw">
       <v-text-field
         ref="firstName"
@@ -18,6 +17,7 @@
         color="#F9AA33"
         required
         dark
+        class="pt-0"
       ></v-text-field>
       <v-text-field
         ref="lastName"

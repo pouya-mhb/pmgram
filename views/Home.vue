@@ -5,6 +5,9 @@
         <v-icon @click.stop="sidebar = !sidebar">mdi-menu</v-icon>
         <h2 class="pl-6"><span class="c-secondary">PM</span>gram</h2>
         <v-spacer></v-spacer>
+        <v-icon @click="goToNewMessage()" class="mr-6"
+          >mdi-pencil-plus-outline</v-icon
+        >
         <v-icon @click="goToSearch()">mdi-magnify</v-icon>
       </v-toolbar>
     </v-card>
@@ -85,6 +88,18 @@
         </li>
       </div>
     </v-navigation-drawer>
+
+    <!-- New message button -->
+    <!--<div class="newMessage-btn">
+      <v-btn
+        class="c-secondary bc-third text-capitalize"
+        height="45"
+        elevation="5"
+        rounded
+        to="/newMessage"
+        ><v-icon class="mr-1">mdi-pencil-plus-outline</v-icon>New Message</v-btn
+      >
+    </div>-->
   </div>
 </template>
 
@@ -118,6 +133,9 @@ export default {
     },
     goToContacts() {
       this.$router.push("/contacts");
+    },
+    goToNewMessage() {
+      this.$router.push("/newMessage");
     },
   },
 };

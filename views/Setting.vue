@@ -138,7 +138,7 @@
     <!-- logout message modal -->
     <v-dialog v-model="logoutModal">
       <v-card
-        class="text-center pa-6 blue-grey darken-2"
+        class="text-center pa-6 blue-grey darken-3"
         style="border-radius: 20px"
       >
         <v-card-text class="px-0">

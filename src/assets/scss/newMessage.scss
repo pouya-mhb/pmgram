@@ -1,0 +1,47 @@
+.newMessage {
+  font-family: "Nunito";
+  margin: 0;
+  height: 100vh;
+  background-color: #2f3e44;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card {
+    width: 100vw;
+  }
+  .search-box {
+    flex: none !important;
+    width: 100vw;
+    border-bottom: 20px solid #232f348f;
+  }
+  .contacts {
+    width: 100%;
+    margin-top: 12px;
+    .contact {
+      width: 100%;
+      height: 80px;
+      border-bottom: 1px solid #232f347e;
+      background-color: #2f3e44;
+
+      .contact-img {
+        border-radius: 50%;
+        margin: 12px;
+        max-height: 55px;
+        max-width: 55px;
+      }
+      .contact-info {
+        color: #ffffff;
+        padding-top: 18px;
+
+        .name {
+          font-weight: 400;
+          font-size: 18px;
+        }
+        .status {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
