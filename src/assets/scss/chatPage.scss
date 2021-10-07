@@ -45,16 +45,6 @@
       padding: 12px 0;
     }
   }
-  .no-message {
-    height: 90vh;
-    .box {
-      background-color: #232f3469;
-      border-radius: 50px;
-      color: rgb(163, 159, 159);
-      padding: 3px 0;
-      font-size: 15px;
-    }
-  }
 
   .newMessage-box {
     position: absolute;
@@ -77,25 +67,57 @@
       color: $secondary;
     }
   }
-  .send-messages {
-    position: absolute;
-    bottom: 65px;
-    right: 20px;
+  .main {
+    height: calc(100vh - 110px) !important;
+    width: 100%;
+    padding: 15px;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .messages {
+      .user-box {
+        background-color: #f0a83cad;
+        border-radius: 12px 12px 0 12px;
+        padding: 10px;
+        margin-bottom: 10px;
+        max-width: 270px;
+        display: block;
 
-    .box {
-      background-color: #f0a83cad;
-      border-radius: 12px 12px 0 12px;
-      padding: 10px;
-      margin-bottom: 10px;
-      max-width: 270px;
-      display: inline-block;
-
-      .text {
-        line-height: 18px;
+        .text {
+          line-height: 17px;
+        }
+        .time {
+          font-size: 12px;
+          text-align: right;
+        }
       }
-      .time {
-        font-size: 13px;
-        text-align: right;
+      .system-box {
+        background-color: #1d2b31;
+        color: rgb(241, 237, 237);
+        border-radius: 12px 12px 12px 0;
+        padding: 10px;
+        margin-bottom: 10px;
+        max-width: 270px;
+        display: block;
+
+        .text {
+          line-height: 17px;
+        }
+        .time {
+          font-size: 12px;
+          text-align: right;
+        }
+      }
+    }
+    .no-message {
+      height: 90vh;
+      .box {
+        background-color: #232f3469;
+        border-radius: 50px;
+        color: rgb(163, 159, 159);
+        padding: 3px 0;
+        font-size: 15px;
       }
     }
   }

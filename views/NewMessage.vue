@@ -24,7 +24,11 @@
       </v-col>
     </v-row>
     <div class="contacts animated fadeIn">
-      <div class="contact" v-for="(item, index) in contacts" :key="index">
+      <div
+        class="contact"
+        v-for="(item, index) in computedContacts"
+        :key="index"
+      >
         <img
           src="./../src/assets/images/1.png"
           class="contact-img float-left"
@@ -69,6 +73,13 @@ export default {
   methods: {
     goToHome() {
       this.$router.push("/home");
+    },
+  },
+  computed: {
+    computedContacts() {
+      let filter;
+      filter = this.contacts.filter((x) => x.name.includes(this.filter));
+      return filter;
     },
   },
 };

@@ -11,6 +11,7 @@
       style="width: 280px;"
       color="grey"
       class="ml-5 mt-5"
+      :word="filter"
     ></v-text-field>
   </div>
 </template>

@@ -7,7 +7,7 @@
       </v-toolbar>
     </v-card>
     <br />
-    <div class="bc-primary animated fadeIn" style="width:80vw">
+    <div class="bc-primary animated fadeIn">
       <v-text-field
         ref="firstName"
         v-model="register.firstName"
@@ -17,6 +17,7 @@
         color="#F9AA33"
         required
         dark
+        outlined
         class="pt-0"
       ></v-text-field>
       <v-text-field
@@ -28,16 +29,8 @@
         color="#F9AA33"
         required
         dark
-      ></v-text-field>
-      <v-text-field
-        ref="userName"
-        v-model="register.userName"
-        autocomplete="off"
-        :rules="[() => !!register.userName || 'This field is required']"
-        label="User Name"
-        color="#F9AA33"
-        required
-        dark
+        outlined
+        class="pt-0"
       ></v-text-field>
       <v-text-field
         ref="email"
@@ -48,6 +41,7 @@
         color="#F9AA33"
         required
         dark
+        outlined
       ></v-text-field>
       <v-text-field
         ref="password"
@@ -59,6 +53,7 @@
         color="#F9AA33"
         required
         dark
+        outlined
       ></v-text-field>
       <v-text-field
         ref="confirmPassword"
@@ -70,6 +65,7 @@
         color="#F9AA33"
         required
         dark
+        outlined
       ></v-text-field>
     </div>
     <br />

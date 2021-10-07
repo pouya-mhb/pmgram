@@ -25,6 +25,7 @@
     </v-card>
 
     <div class="contacts animated fadeIn">
+      {{ word }}
       <div class="contact" v-for="(item, index) in contacts" :key="index">
         <img
           src="./../src/assets/images/1.png"
@@ -56,6 +57,7 @@ export default {
   components: {
     Search,
   },
+  props: ["word"],
   data() {
     return {
       search: false,
@@ -77,6 +79,13 @@ export default {
     },
     goToNewContact() {
       this.$router.push("/newContact");
+    },
+  },
+  computed: {
+    computedContacts() {
+      let filter;
+      filter = this.contacts.filter((x) => x.name.includes(this.filter));
+      return filter;
     },
   },
 };

@@ -44,36 +44,56 @@
         <span class="grey--text pl-3">Delete chat</span>
       </div>
     </div>
-    <!-- No message box -->
-    <div v-show="noMessage" class="no-message flex-center animated fadeIn">
-      <div class="box">
-        <span class="px-4">There is no message yet...</span>
+    <div class="main d-flex flex-column" id="container">
+      <!-- No message box -->
+      <div v-show="noMessage" class="no-message flex-center animated fadeIn">
+        <div class="box">
+          <span class="px-4">There is no message yet...</span>
+        </div>
+      </div>
+      <!-- Messages box -->
+      <div
+        v-show="!noMessage"
+        v-for="(item, index) in messages"
+        :key="index"
+        class="messages h-100"
+      >
+        <div
+          :class="
+            item.sender == 'user'
+              ? 'user-box float-right'
+              : 'system-box float-left'
+          "
+        >
+          <div
+            class="text pb-1"
+            :class="item.sender == 'user' ? 'text-right' : 'text-left'"
+          >
+            <span class="text-break">{{ item.text }}</span>
+          </div>
+          <div
+            class="time"
+            :class="item.sender == 'user' ? 'float-left' : 'float-right'"
+          >
+            <span>{{ item.time }}</span>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Messages box -->
-    <!-- <div v-show="!noMessage" class="send-messages">
-      <div class="box float-right">
-        <div class="text pb-1">
-          <span>salaaaaaam</span>
-        </div>
-        <div class="time">
-        <span>10:30</span>
-        </div>
-      </div>
-    </div> -->
     <!-- message input box -->
     <div class="newMessage-box pb-0 animated fadeIn">
       <v-row class="pa-0">
         <v-col cols="10" class="py-0">
           <input
-            v-model="newMessage"
+            v-model="text"
             class="input grey--text px-1"
             type="text"
             placeholder="Write a message..."
+            id="text-input"
           />
         </v-col>
         <v-col cols="2" class="pa-0">
-          <v-icon :class="{ disabled: !newMessage }" class="icon"
+          <v-icon @click="send()" :disabled="!text" class="icon"
             >mdi-send</v-icon
           >
         </v-col>
@@ -172,14 +192,20 @@ export default {
   },
   data() {
     return {
-      newMessage: "",
+      text: "",
       showOptions: false,
       search: false,
       profile: false,
       editName: false,
       newName: "",
-      noMessage: true,
+      noMessage: false,
       firstLetter: "",
+      messages: [
+        { text: "salaaam", sender: "user", time: "10:30" },
+        { text: "khubi?", sender: "user", time: "10:31" },
+        { text: "qorbunet", sender: "system", time: "10:31" },
+        { text: "to chetori??", sender: "system", time: "10:32" },
+      ],
     };
   },
   directives: {
@@ -204,6 +230,23 @@ export default {
     closeEditName() {
       this.editName = false;
       this.newName = "";
+    },
+    scrollToEnd() {
+      // this function scroll the page to the bottom in every refreshing
+      var container = document.querySelector("#container");
+      var scrollHeight = container.scrollHeight;
+      container.scrollTop = scrollHeight;
+    },
+    send() {
+      let currentTime = new Date();
+      this.messages.push({
+        text: this.text,
+        sender: "user",
+        time: currentTime.getHours() + ":" + currentTime.getMinutes(),
+      });
+      this.text = "";
+      this.scrollToEnd();
+      document.getElementById("text-input").focus();
     },
   },
   mounted() {},

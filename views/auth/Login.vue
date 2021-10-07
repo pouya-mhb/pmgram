@@ -8,7 +8,7 @@
     </v-card>
     <br />
     <br />
-    <div class="bc-primary animated fadeIn" style="width:80vw">
+    <div class="bc-primary animated fadeIn">
       <v-text-field
         ref="email"
         v-model="login.email"
@@ -17,6 +17,7 @@
         color="#F9AA33"
         required
         dark
+        outlined
       ></v-text-field>
       <v-text-field
         ref="password"
@@ -27,6 +28,7 @@
         color="#F9AA33"
         required
         dark
+        outlined
       ></v-text-field>
     </div>
     <br />
