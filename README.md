@@ -1,5 +1,5 @@
 # PMgram
-**Our beautiful messengar to make comminucations**
+**Our beautiful messenger to make communications**
 
 This project builts on 
  -  Vue Js
